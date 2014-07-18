@@ -1,1 +1,1 @@
-angular.module('myApp', [])
+this.presentlyApp = angular.module('presentlyApp', []);
