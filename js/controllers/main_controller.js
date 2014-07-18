@@ -1,14 +1,15 @@
-this.presentlyApp.controller("MainCtrl", function($scope, $timeout,Weather) {
+this.presentlyApp.controller("MainCtrl", function($scope, $timeout,Weather,UserService) {
   var updateTime;
   $scope.date = {};
+  $scope.user = UserService.user; 
 
-   $scope.weather = {}
+  $scope.weather = {}
     // Hardcode San_Francisco for now
-    Weather.getWeatherForecast("CA/San_Francisco")
+    Weather.getWeatherForecast($scope.user.location)
     .then(function(data) {
       $scope.weather.forecast = data;
     });
-    
+
   updateTime = function() {
     $scope.date.raw = new Date();
     $timeout(updateTime, 1000);

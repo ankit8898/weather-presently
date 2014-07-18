@@ -1,7 +1,8 @@
-this.presentlyApp.controller("SettingsCtrl", function($scope) {
- 
+this.presentlyApp.controller("SettingsCtrl", function($scope,UserService) {
+
+$scope.user = UserService.user;
  $scope.save = function (){
 
-  console.log($scope.user)
+  UserService.save();
 }
 });
