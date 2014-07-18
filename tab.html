@@ -9,9 +9,6 @@
 </head>
 <body>
   <div class="container">
-
-
-    
     <div class="row">
       <div ng-controller="MainCtrl">
         <div class="col-md-4">.col-md-4</div>
@@ -19,7 +16,9 @@
           <h1> {{ date.raw | date:'hh mm ss' }} </h1>
           <h2>{{ date.raw | date:'EEEE, MMMM yyyy' }}</h2>
         </div>
-        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4"><div id="forecast">
+          <pre>{{ weather.forecast | json }}</pre>
+        </div></div>
       </div>
     </div>
 
@@ -28,6 +27,7 @@
   <script src="./js/vendor/angular-route.min.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/controllers/main_controller.js"></script>
+  <script src="./js/services/weather_provider.js"></script>
 </body>
 </html>
 
